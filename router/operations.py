@@ -1,7 +1,7 @@
 from fastapi import FastAPI, APIRouter,Depends
 from sqlalchemy.orm import Session
 import model
-from strructure import Signup
+from strructure import Signup, Valid, Donation
 from databaseconnection import sessionlocal, engine
 
 
@@ -30,3 +30,16 @@ def add_new_data(data:Signup,db:Session=Depends(get_db)):
 # @router.get("/get/signupinfo/")
 # def get_signup_info(db:Session=Depends(get_db)):
 #     return db.query(model.Signup).all()
+
+@router.post("/validate/user/")
+def validate_users(data:Valid,db:Session=Depends(get_db)):
+    count=db.execute(f"SELECT id from signupinfo WHERE email='{data.email}' AND password='{data.password}'")
+    if(count==0):
+        return False
+    else:
+        return True
+
+@router.post("/api/donate/")
+def add_new_donation(data:Donation,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO donateamount(donate_amount) VALUES('{data.donate_amount}')")
+    donateid=db.execute("SELECT id from donateamount ")
