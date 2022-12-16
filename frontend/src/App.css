@@ -1,0 +1,46 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Andika', sans-serif;
+}
+
+.container{
+    background-color: yellow;
+    margin: 10vh 20vw;
+    padding: 10vh 10vw;
+    height: 80vh;
+    width: 60vw;
+}
+.modal-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+input{
+    display: flex;
+}
+button{
+    margin: 5px 120px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+
+}
+button:hover{
+    background-color: green;
+    color: white;
+}
+.form-error{
+    color: red;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
