@@ -1,7 +1,10 @@
 from fastapi import FastAPI, APIRouter,Depends, HTTPException
 from sqlalchemy.orm import Session
 import model
-from strructure import Signup, Valid, Donation,InputAutismAge1lessQuestions,InputAutismAge1to2Questions,InputAutismAge2to10Questions,InputAutismAge10to17Questions,InputAutismAge18Questions,InputAutism1lessResponse,InputAutism1Response,InputAutism2to10Response,InputAutism10to17Response,InputAutism18response,InputAutismAgeGirlsQuestions
+from strructure import Signup, Valid, Donation, InputAutismAge1lessQuestions, InputAutismAge1to2Questions, \
+    InputAutismAge2to10Questions, InputAutismAge10to17Questions, InputAutismAge18Questions, InputAutism1lessResponse, \
+    InputAutism1Response, InputAutism2to10Response, InputAutism10to17Response, InputAutism18response, \
+    InputAutismAgeGirlsQuestions, InputAutismGirlresponse
 from databaseconnection import sessionlocal, engine
 
 
@@ -121,3 +124,198 @@ def gett_question2(db: Session = Depends(get_db)):
 @router.get("/api/inputquestions/forgirls/")
 def gett_question3(db: Session = Depends(get_db)):
     return db.execute(f"SELECT question FROM autismgirlsquestion LIMIT 10").all()
+
+@router.post("/api/response/inputlessthan1/")
+def get_response_lessthan1(data:InputAutism1lessResponse,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism1lessresponse(email,question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) VALUES('{data.email}','{data.question1}','{data.question2}','{data.question3}','{data.question4}','{data.question5}','{data.question6}','{data.question7}','{data.question8}','{data.question9}','{data.question10}')")
+    db.commit()
+
+@router.post("/api/response/input1to2/")
+def get_response_lessthan1(data:InputAutism1Response,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism1response(email,question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) VALUES('{data.email}','{data.question1}','{data.question2}','{data.question3}','{data.question4}','{data.question5}','{data.question6}','{data.question7}','{data.question8}','{data.question9}','{data.question10}')")
+    db.commit()
+
+@router.post("/api/response/input2to10/")
+def get_response_lessthan1(data:InputAutism2to10Response,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism2to10response(email,question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) VALUES('{data.email}','{data.question1}','{data.question2}','{data.question3}','{data.question4}','{data.question5}','{data.question6}','{data.question7}','{data.question8}','{data.question9}','{data.question10}')")
+    db.commit()
+
+@router.post("/api/response/input10to17/")
+def get_response_lessthan1(data:InputAutism2to10Response,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism10to17response(email,question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) VALUES('{data.email}','{data.question1}','{data.question2}','{data.question3}','{data.question4}','{data.question5}','{data.question6}','{data.question7}','{data.question8}','{data.question9}','{data.question10}')")
+    db.commit()
+
+@router.post("/api/response/input18/")
+def get_response_lessthan1(data:InputAutism18response,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism18response(email,question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) VALUES('{data.email}','{data.question1}','{data.question2}','{data.question3}','{data.question4}','{data.question5}','{data.question6}','{data.question7}','{data.question8}','{data.question9}','{data.question10}')")
+    db.commit()
+
+@router.post("/api/response/girls/")
+def get_response_lessthan1(data:InputAutismGirlresponse,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autismgirlresponse(email,question1,question2,question3,question4,question5,question6,question7,question8,question9,question10) VALUES('{data.email}','{data.question1}','{data.question2}','{data.question3}','{data.question4}','{data.question5}','{data.question6}','{data.question7}','{data.question8}','{data.question9}','{data.question10}')")
+    db.commit()
+
+@router.get("/api/get/conclusion/")
+def get_conclusion(email:str,db:Session=Depends(get_db)):
+    count1=db.execute(f"SELECT COUNT(*) from autism1lessresponse WHERE email='{email}'").one()
+    count1=int(''.join(map(str,count1)))
+    if(count1!=0):
+        row1=db.execute(f"SELECT * from autism1lessresponse WHERE email='{email}'").one()
+        count=0
+        if(row1["question1"]=="yes"):
+            count=count+1
+        if (row1["question2"] == "yes"):
+            count = count + 1
+        if (row1["question3"] == "yes"):
+            count = count + 1
+        if (row1["question4"] == "yes"):
+            count = count + 1
+        if (row1["question5"] == "yes"):
+            count = count + 1
+        if (row1["question6"] == "yes"):
+            count = count + 1
+        if (row1["question7"] == "yes"):
+            count = count + 1
+        if (row1["question8"] == "yes"):
+            count = count + 1
+        if (row1["question9"] == "yes"):
+            count = count + 1
+        if(count>=5):
+            return True
+        else:
+            return False
+    count1 = db.execute(f"SELECT COUNT(*) from autism1response WHERE email='{email}'").one()
+    count1 = int(''.join(map(str, count1)))
+    if (count1 != 0):
+        row2 = db.execute(f"SELECT * from autism1response WHERE email='{email}'").one()
+        count = 0
+        if (row2["question1"] == "yes"):
+            count = count + 1
+        if (row2["question2"] == "yes"):
+            count = count + 1
+        if (row2["question3"] == "yes"):
+            count = count + 1
+        if (row2["question4"] == "yes"):
+            count = count + 1
+        if (row2["question5"] == "yes"):
+            count = count + 1
+        if (row2["question6"] == "yes"):
+            count = count + 1
+        if (row2["question7"] == "yes"):
+            count = count + 1
+        if (row2["question8"] == "yes"):
+            count = count + 1
+        if (row2["question9"] == "yes"):
+            count = count + 1
+        if (count >= 5):
+            return True
+        else:
+            return False
+    count1 = db.execute(f"SELECT COUNT(*) from autism2to10response WHERE email='{email}'").one()
+    count1 = int(''.join(map(str, count1)))
+    if (count1 != 0):
+        row3 = db.execute(f"SELECT * from autism2to10response WHERE email='{email}'").one()
+        count = 0
+        if (row3["question1"] == "yes"):
+            count = count + 1
+        if (row3["question2"] == "yes"):
+            count = count + 1
+        if (row3["question3"] == "yes"):
+            count = count + 1
+        if (row3["question4"] == "yes"):
+            count = count + 1
+        if (row3["question5"] == "yes"):
+            count = count + 1
+        if (row3["question6"] == "yes"):
+            count = count + 1
+        if (row3["question7"] == "yes"):
+            count = count + 1
+        if (row3["question8"] == "yes"):
+            count = count + 1
+        if (row3["question9"] == "yes"):
+            count = count + 1
+        if (count >= 5):
+            return True
+        else:
+            return False
+    count1 = db.execute(f"SELECT COUNT(*) from autism10to17response WHERE email='{email}'").one()
+    count1 = int(''.join(map(str, count1)))
+    if (count1 != 0):
+        row4 = db.execute(f"SELECT * from autism10to17response WHERE email='{email}'").one()
+        count = 0
+        if (row4["question1"] == "yes"):
+            count = count + 1
+        if (row4["question2"] == "yes"):
+            count = count + 1
+        if (row4["question3"] == "yes"):
+            count = count + 1
+        if (row4["question4"] == "yes"):
+            count = count + 1
+        if (row4["question5"] == "yes"):
+            count = count + 1
+        if (row4["question6"] == "yes"):
+            count = count + 1
+        if (row4["question7"] == "yes"):
+            count = count + 1
+        if (row4["question8"] == "yes"):
+            count = count + 1
+        if (row4["question9"] == "yes"):
+            count = count + 1
+        if (count >= 5):
+            return True
+        else:
+            return False
+    count1 = db.execute(f"SELECT COUNT(*) from autism18response WHERE email='{email}'").one()
+    count1 = int(''.join(map(str, count1)))
+    if (count1 != 0):
+        row5 = db.execute(f"SELECT * from autism18response WHERE email='{email}'").one()
+        count = 0
+        if (row5["question1"] == "yes"):
+            count = count + 1
+        if (row5["question2"] == "yes"):
+            count = count + 1
+        if (row5["question3"] == "yes"):
+            count = count + 1
+        if (row5["question4"] == "yes"):
+            count = count + 1
+        if (row5["question5"] == "yes"):
+            count = count + 1
+        if (row5["question6"] == "yes"):
+            count = count + 1
+        if (row5["question7"] == "yes"):
+            count = count + 1
+        if (row5["question8"] == "yes"):
+            count = count + 1
+        if (row5["question9"] == "yes"):
+            count = count + 1
+        if (count >= 5):
+            return True
+        else:
+            return False
+    count1 = db.execute(f"SELECT COUNT(*) from autismgirlresponse WHERE email='{email}'").one()
+    count1 = int(''.join(map(str, count1)))
+    if (count1 != 0):
+        row6 = db.execute(f"SELECT * from autismgirlresponse WHERE email='{email}'").one()
+        count = 0
+        if (row6["question1"] == "yes"):
+            count = count + 1
+        if (row6["question2"] == "yes"):
+            count = count + 1
+        if (row6["question3"] == "yes"):
+            count = count + 1
+        if (row6["question4"] == "yes"):
+            count = count + 1
+        if (row6["question5"] == "yes"):
+            count = count + 1
+        if (row6["question6"] == "yes"):
+            count = count + 1
+        if (row6["question7"] == "yes"):
+            count = count + 1
+        if (row6["question8"] == "yes"):
+            count = count + 1
+        if (row6["question9"] == "yes"):
+            count = count + 1
+        if (count >= 5):
+            return True
+        else:
+            return False
