@@ -34,3 +34,120 @@ class Address(base):
     state=Column(String)
     country=Column(String)
     pin_code=Column(Integer)
+
+class AutismAge1lessQuestions(base):
+    __tablename__='autism1lessquestion'
+
+    id=Column(Integer,primary_key=True,autoincrement=True)
+    question=Column(String)
+
+class AutismAge1to2Questions(base):
+    __tablename__='autism1to2question'
+
+    id=Column(Integer, primary_key=True, autoincrement= True)
+    question=Column(String)
+
+
+class AutismAge2to10Questions(base):
+    __tablename__ = 'autism2to10question'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    question = Column(String)
+
+
+class AutismAge10to17Questions(base):
+    __tablename__ = 'autism10to17question'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    question = Column(String)
+
+
+class AutismAge18Questions(base):
+    __tablename__ = 'autism18question'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    question = Column(String)
+
+
+class AutismAgeGirlsQuestions(base):
+    __tablename__ = 'autismgirlsquestion'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    question = Column(String)
+
+class Autism1lessResponse(base):
+    __tablename__='autism1lessresponse'
+
+    id=Column(Integer,primary_key=True,autoincrement=True)
+    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    question1=Column(String)
+    question2=Column(String)
+    question3= Column(String)
+    question4= Column(String)
+    question5=Column(String)
+    question6=Column(String)
+    question7=Column(String)
+    question8=Column(String)
+    question9=Column(String)
+    question10=Column(String)
+
+class Autism1Response(base):
+    __tablename__='autism1response'
+
+    id=Column(Integer,primary_key=True,autoincrement=True)
+    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    question1=Column(String)
+    question2=Column(String)
+    question3= Column(String)
+    question4= Column(String)
+    question5=Column(String)
+    question6=Column(String)
+    question7=Column(String)
+    question8=Column(String)
+    question9=Column(String)
+    question10=Column(String)
+
+class Autism2to10Response(base):
+    __tablename__='autism2to10response'
+
+    id=Column(Integer,primary_key=True,autoincrement=True)
+    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    question1=Column(String)
+    question2=Column(String)
+    question3= Column(String)
+    question4= Column(String)
+    question5=Column(String)
+    question6=Column(String)
+    question7=Column(String)
+
+class Autism10to17Response(base):
+    __tablename__='autism10to17response'
+
+    id=Column(Integer,primary_key=True,autoincrement=True)
+    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    question1=Column(String)
+    question2=Column(String)
+    question3= Column(String)
+    question4= Column(String)
+    question5=Column(String)
+    question6=Column(String)
+    question7=Column(String)
+    question8=Column(String)
+    question9=Column(String)
+    question10=Column(String)
+
+class Autism18response(base):
+    __tablename__='autism18response'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    person_id = Column(Integer, ForeignKey("signupinfo.id"))
+    question1 = Column(String)
+    question2 = Column(String)
+    question3 = Column(String)
+    question4 = Column(String)
+    question5 = Column(String)
+    question6 = Column(String)
+    question7 = Column(String)
+    question8 = Column(String)
+    question9 = Column(String)
+    question10 = Column(String)
