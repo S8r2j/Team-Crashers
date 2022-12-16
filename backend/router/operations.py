@@ -1,7 +1,7 @@
 from fastapi import FastAPI, APIRouter,Depends, HTTPException
 from sqlalchemy.orm import Session
 import model
-from strructure import Signup, Valid, Donation
+from strructure import Signup, Valid, Donation,InputAutismAge1lessQuestions,InputAutismAge1to2Questions,InputAutismAge2to10Questions,InputAutismAge10to17Questions,InputAutismAge18Questions,InputAutism1lessResponse,InputAutism1Response,InputAutism2to10Response,InputAutism10to17Response,InputAutism18response,InputAutismAgeGirlsQuestions
 from databaseconnection import sessionlocal, engine
 
 
@@ -70,3 +70,54 @@ def add_new_donation(data:Donation,db:Session=Depends(get_db)):
             db.commit()
     else:
         raise HTTPException(status_code=404,detail=f"Email is already registered")
+
+@router.post("/api/inputquestions/forlessthan1year/")
+def get_question(data:InputAutismAge1lessQuestions,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism1lessquestion(question) VALUES ('{data.question}')")
+    db.commit()
+
+@router.post("/api/inputquestions/for1to2year/")
+def get_questions(data:InputAutismAge1to2Questions,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism1to2question(question) VALUES ('{data.question}')")
+    db.commit()
+@router.post("/api/inputquestions/for2to10years/")
+def gett_question(data:InputAutismAge2to10Questions,db:Session=Depends(get_db)):
+    db.execute(f"INSERT INTO autism2to10question(question) VALUES ('{data.question}')")
+    db.commit()
+
+@router.post("/api/inputquestions/for10to18years/")
+def gett_questions(data: InputAutismAge10to17Questions, db: Session = Depends(get_db)):
+    db.execute(f"INSERT INTO autism10to17question(question) VALUES ('{data.question}')")
+    db.commit()
+@router.post("/api/inputquestions/for18years/")
+def gett_question2(data: InputAutismAge18Questions, db: Session = Depends(get_db)):
+    db.execute(f"INSERT INTO autism18question(question) VALUES ('{data.question}')")
+    db.commit()
+@router.post("/api/inputquestions/forgirls/")
+def gett_question3(data: InputAutismAgeGirlsQuestions, db: Session = Depends(get_db)):
+    db.execute(f"INSERT INTO autismgirlsquestion(question) VALUES ('{data.question}')")
+    db.commit()
+
+@router.get("/api/inputquestions/forlessthan1year/")
+def get_question(db:Session=Depends(get_db)):
+    return db.execute(f"SELECT question from autism1lessquestion LIMIT 10").all()
+
+@router.get("/api/inputquestions/for1to2year/")
+def get_questions(db:Session=Depends(get_db)):
+    return db.execute(f"SELECT question FROM autism1to2question LIMIT 10").all()
+
+@router.get("/api/inputquestions/for2to10years/")
+def gett_question(db:Session=Depends(get_db)):
+    return db.execute(f"SELECT question FROM autism2to10question LIMIT 10").all()
+
+@router.get("/api/inputquestions/for10to18years/")
+def gett_questions(db: Session = Depends(get_db)):
+    return db.execute(f"SELECT question FROM autism10to17question LIMIT 10").all()
+
+@router.get("/api/inputquestions/for18years/")
+def gett_question2(db: Session = Depends(get_db)):
+    return db.execute(f"SELECT question FROM autism18question LIMIT 10").all()
+
+@router.get("/api/inputquestions/forgirls/")
+def gett_question3(db: Session = Depends(get_db)):
+    return db.execute(f"SELECT question FROM autismgirlsquestion LIMIT 10").all()
