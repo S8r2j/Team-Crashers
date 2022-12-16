@@ -52,4 +52,26 @@ button:hover{
 .nav-item{
     padding: 0px 4px 0px 8px;
 }
-
+.form-inline{
+    display: block;
+}
+.select1{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.para1{
+    margin: 20px;
+    margin-bottom: 0;
+    font-size: large;
+    font-weight: bold;
+}
+.arr{
+    margin: 2vh 10vw ;
+    padding: 10px;
+}
+.ques1{
+    margin: 20px;
+}

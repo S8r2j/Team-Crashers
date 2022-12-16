@@ -1,39 +1,57 @@
-import React from 'react'
-import { useEffect } from 'react';
+import React, { useState } from 'react'
 import axios from 'axios';
 
+let count = 0;
 function Check_Autism() {
-    function handelClick(event) {
-        console.log(event.target.value);   
-    }
-    const submitRegistration = async () => {
-       
-        
-            axios.get("")
-                .then(response => {
-                    // setPeople(response.data);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        
-  
- }
+  const [data, setData] = useState([]);
+  const [show, setShow] = useState(true);
+  function handelClick(event) {
+    console.log(event.target.value);
+    axios.get(`http://127.0.0.1:8000/api/inputquestions/${event.target.value}`)
+      .then(response => {
+        console.log("Getting from ::::", response.data)
+        setData(response.data)
+      }).catch(err => console.log(err));
 
+  }
+   function handelClick1(event){
+    console.log(event.target.value)
+    if(event.target.value==='yes'){
+      count++;
+      console.log(count);
+    }
+    if(count>=5){
+      setShow(false);
+    }
+   }
+  const arr = data.map((data) => {
+    return (
+      <>
+        <p className='ques1'>{data.question}</p>
+        <select class="form-select" aria-label="Default select example" onClick={(e) => (handelClick1(e))}>
+        <option selected>Choose Your Answer</option>
+        <option value="yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      </>
+    )
+  })
   return (
     <div>
-      <form class="form-inline">
-    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Choose The Age of Your Child</label>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" onClick={(e)=>(handelClick(e))}>
-    <option value="1">Less than One</option>
-    <option value="2">One to Two</option>
-    <option value="3">Two to Ten</option>
-    <option value="4">Ten to Seventeen</option>
-    <option value="5">Eignteen and Above</option>
-    <option value="6">For Girls</option>
-  </select>
-  <button type="submit" class="btn btn-primary my-1"  onClick={submitRegistration()}>Submit</button>
-</form>
+      <p className='para1'>Choose The Age of Your Child</p>
+      <form className='select1'>
+        <select class="form-select" aria-label="Default select example" onClick={(e) => (handelClick(e))}>
+        <option selected>Choose the age</option>
+          <option value="forlessthan1year">Less than One</option>
+          <option value="for1to2year">One to Two</option>
+          <option value="for2to10years">Two to Ten</option>
+          <option value="for10to18years">Ten to Seventeen</option>
+          <option value="for18years">Eignteen and Above</option>
+          <option value="forgirls">For Girls</option>
+        </select>
+      </form>
+      {show && <div className='arr'>{arr}</div>}
+      {!show &&<div >You have Autism</div>}
     </div>
   );
 }
