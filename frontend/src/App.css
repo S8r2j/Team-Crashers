@@ -6,7 +6,7 @@
 }
 
 .container{
-    background-color: yellow;
+    background-color: rgba(251, 255, 0, 0.47);
     margin: 10vh 20vw;
     padding: 10vh 10vw;
     min-height: 80vh;

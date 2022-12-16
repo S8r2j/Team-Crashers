@@ -27,14 +27,14 @@ function Footer() {
 			</div>
 
 			<div class="footer-items">
-				<h2>Tutorials</h2>
+				<h2>Quick links</h2>
 				<div class="border"></div>
 				<ul>
-					<a href=""><li>HTML/CSS</li></a>
-					<a href=""><li>Javascript</li></a>
-					<a href=""><li>PHP</li></a>
-					<a href=""><li>C</li></a>
-					<a href=""><li>Java</li></a>
+					<a href=""><li>History</li></a>
+					<a href=""><li>Donate</li></a>
+					<a href=""><li>Individual</li></a>
+					<a href=""><li>Privacy Policy</li></a>
+					<a href=""><li>Managements</li></a>
 				</ul>
 			</div>
 
@@ -47,10 +47,10 @@ function Footer() {
 					<li><i class="fa fa-envelope" aria-hidden="true"></i>support@computers&codes.com</li>
 				</ul>
 				<div class="social-media">
-					<a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					<a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+					<a href="/"><i class="fa fa-facebook" aria-hidden="true"><img src='images/logo/fblogo.png' alt='logo'/></i></a>
+					<a href="/"><i class="fa fa-twitter" aria-hidden="true"><img src='images/logo/twitterlogo.png' alt='logo'/></i></a>
+					<a href="/"><i class="fa fa-instagram" aria-hidden="true"><img src='images/logo/instagramlogo.png' alt='logo'/></i></a>
+					<a href="/"><i class="fa fa-google-plus" aria-hidden="true"><img src='images/logo/tiktoklogo.png' alt='logo'/></i></a>
 				</div>
 			</div>
 			
