@@ -206,3 +206,14 @@ class AutismGirlresponse(InputAutismGirlresponse):
     id:int
     class config:
         orm_mode:True
+
+class InputContact(SQLModel):
+    name:str
+    email:str
+    message:str
+
+class Contact(InputContact):
+    id:int
+
+    class config:
+        orm_mode:True

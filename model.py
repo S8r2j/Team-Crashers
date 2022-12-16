@@ -170,3 +170,11 @@ class AutismGirlresponse(base):
     question8 = Column(String)
     question9 = Column(String)
     question10 = Column(String)
+
+class Contact(base):
+    __tablename__='contactinfo'
+
+    id=Column(Integer,primary_key=True, autoincrement=True)
+    name=Column(String)
+    email= Column(String, unique=True)
+    message=Column(String)
