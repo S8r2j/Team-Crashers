@@ -3,6 +3,7 @@ import './Home.css'
 function Home() {
   return (
     <>
+    <header>
       <div className='main'>
         <div className='sub1'>
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -43,45 +44,46 @@ function Home() {
           </p>
         </div>
       </div>
+      </header>
       <div className='main2'>
       <div class="card" style={{ width: '18rem' }}>
         <img src="https://www.cdc.gov/ncbddd/autism/images/boy-having-fun-507031927.jpg?_=47464" class="card-img-top" alt="autism" />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Autism spectrum</h5>
+          <p class="card-text">The autism spectrum, often referred to as just autism or in the context of a professional diagnosis autism spectrum disorder (ASD) or autism spectrum condition (ASC), is a neurodevelopmental condition.</p>
+          <a href="https://en.wikipedia.org/wiki/Autism_spectrum" class="btn btn-primary">Learn More</a>
         </div>
       </div>
       <div class="card" style={{ width: '18rem' }}>
-        <img src="https://www.cdc.gov/ncbddd/autism/images/boy-having-fun-507031927.jpg?_=47464" class="card-img-top" alt="autism" />
+        <img src="https://th.bing.com/th/id/R.cc0fbe4f21ab248c6c7a694854b707fb?rik=R7xxWLXZazRGnA&pid=ImgRaw&r=0&sres=1&sresct=1" class="card-img-top" alt="autism" />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Autism Awareness</h5>
+          <p class="card-text">Research indicates that early diagnosis is associated with significantly better outcomes for children with autism. The earlier a child is diagnosed, the earlier the child can begin benefiting from one of the many specialized intervention approaches.</p>
+          <a href="https://www.dshs.wa.gov/dda/consumers-and-families/autism-awareness" class="btn btn-primary">Learn More</a>
         </div>
       </div>
       <div class="card" style={{ width: '18rem' }}>
-        <img src="https://www.cdc.gov/ncbddd/autism/images/boy-having-fun-507031927.jpg?_=47464" class="card-img-top" alt="autism" />
+        <img src="https://mediacloud.theweek.com/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1608185570/41529_article_full.jpg" class="card-img-top" alt="autism" />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Autism Speaks</h5>
+          <p class="card-text">The time following a diagnosis of autism can be overwhelming. You likely have a lot of questions and concerns about what lies ahead. You have come to the right place.</p>
+          <a href="https://www.autismspeaks.org/" class="btn btn-primary">Learn More</a>
         </div>
       </div>
       <div class="card" style={{ width: '18rem' }}>
-        <img src="https://www.cdc.gov/ncbddd/autism/images/boy-having-fun-507031927.jpg?_=47464" class="card-img-top" alt="autism" />
+        <img src="https://cdn.cdnparenting.com/articles/2018/02/528601450-H.jpg" class="card-img-top" alt="autism" />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Nonverbal Autism</h5>
+          <p class="card-text">Nonverbal autism is a subset of autism where the person does not learn how to speak.[1] It is estimated that 25% to 50% of children diagnosed with autism spectrum disorder (ASD) never develop spoken language beyond a few words or utterances..</p>
+          <a href="https://en.wikipedia.org/wiki/Nonverbal_autism" class="btn btn-primary">Learn More</a>
         </div>
       </div>
       <div class="card" style={{ width: '18rem' }}>
-        <img src="https://www.cdc.gov/ncbddd/autism/images/boy-having-fun-507031927.jpg?_=47464" class="card-img-top" alt="autism" />
+        <img src="https://th.bing.com/th/id/OIP.4MgFahHDQAa-ESR_yCwNuQHaIj?pid=ImgDet&rs=1" class="card-img-top" alt="autism" />
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Little girl with autism</h5>
+          <p class="card-text"> self-stimulating behaviors (stims), or extreme speech and language difficulty.</p>
+          <a href="https://www.verywellhealth.com/signs-of-autism-in-girls-260304" class="btn btn-primary">Learn More</a>
         </div>
       </div>
       </div>

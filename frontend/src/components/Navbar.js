@@ -5,7 +5,7 @@ function Navbar() {
   let navigate = useNavigate();
   return (
     <>
-<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
   <span className="navbar-brand">
       <img src="images/My project.png" width="100em" height="100em" className="d-inline-block align-baseline pt-2 " alt="logo" />
