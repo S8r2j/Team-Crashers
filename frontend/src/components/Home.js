@@ -3,7 +3,6 @@ import './Home.css'
 function Home() {
   return (
     <>
-    <header>
       <div className='main'>
         <div className='sub1'>
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -44,7 +43,6 @@ function Home() {
           </p>
         </div>
       </div>
-      </header>
       <div className='main2'>
       <div class="card" style={{ width: '18rem' }}>
         <img src="https://www.cdc.gov/ncbddd/autism/images/boy-having-fun-507031927.jpg?_=47464" class="card-img-top" alt="autism" />
