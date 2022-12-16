@@ -7,7 +7,8 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Donate from './components/Donate';
 import SignUp from './components/Forms/Signup';
-import Login from './components/Forms/Login'
+import Login from './components/Forms/Login';
+import Check_Autism from './components/Check_Autism';
 function App() {
   return (
    <>
@@ -15,6 +16,7 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/check" element={<Check_Autism />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />

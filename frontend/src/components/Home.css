@@ -1,0 +1,47 @@
+/* body{
+    background: url('autism/autism4-transformed.jpeg');
+    height: 145vh;
+} */
+
+.main{
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgb(239, 181, 181);
+    height: 100vh;
+}
+.sub1{
+    position: absolute;
+   justify-content: center;
+   align-items: center;
+   height: 50vh;
+    width: 40vw;
+    margin: 5px;
+    padding-left: 2vw;
+    background-color: aliceblue;
+}
+.sub2{
+    position: absolute;
+    right: 10vw;
+    justify-content: center;
+   align-items: center;
+    height: 50vh;
+    width: 40vw;
+    margin: 5px;
+    background: rgb(119, 145, 230);
+    }
+ .sub1 img{
+    height: 500px;
+ }
+ .main2{
+    display: flex;
+ }
+
+
+@media only screen and (max-width: 500px) {
+   .main{
+    display: block;
+   }
+  }
+

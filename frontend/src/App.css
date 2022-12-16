@@ -9,8 +9,10 @@
     background-color: yellow;
     margin: 10vh 20vw;
     padding: 10vh 10vw;
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     width: 60vw;
+    border-radius: 10px;
 }
 .modal-title{
     display: flex;
@@ -42,5 +44,12 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn{
+   margin: 10px;
+}
+.nav-item{
+    padding: 0px 4px 0px 8px;
 }
 
