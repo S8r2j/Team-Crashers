@@ -79,7 +79,7 @@ class Autism1lessResponse(base):
     __tablename__='autism1lessresponse'
 
     id=Column(Integer,primary_key=True,autoincrement=True)
-    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    email=Column(String,unique=True)
     question1=Column(String)
     question2=Column(String)
     question3= Column(String)
@@ -95,7 +95,7 @@ class Autism1Response(base):
     __tablename__='autism1response'
 
     id=Column(Integer,primary_key=True,autoincrement=True)
-    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    email=Column(String,unique=True)
     question1=Column(String)
     question2=Column(String)
     question3= Column(String)
@@ -111,7 +111,7 @@ class Autism2to10Response(base):
     __tablename__='autism2to10response'
 
     id=Column(Integer,primary_key=True,autoincrement=True)
-    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    email=Column(String,unique=True)
     question1=Column(String)
     question2=Column(String)
     question3= Column(String)
@@ -119,12 +119,15 @@ class Autism2to10Response(base):
     question5=Column(String)
     question6=Column(String)
     question7=Column(String)
+    question8=Column(String)
+    question9=Column(String)
+    question10=Column(String)
 
 class Autism10to17Response(base):
     __tablename__='autism10to17response'
 
     id=Column(Integer,primary_key=True,autoincrement=True)
-    person_id=Column(Integer,ForeignKey("signupinfo.id"))
+    email = Column(String, unique=True)
     question1=Column(String)
     question2=Column(String)
     question3= Column(String)
@@ -140,7 +143,7 @@ class Autism18response(base):
     __tablename__='autism18response'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    person_id = Column(Integer, ForeignKey("signupinfo.id"))
+    email=Column(String,unique=True)
     question1 = Column(String)
     question2 = Column(String)
     question3 = Column(String)
@@ -151,3 +154,27 @@ class Autism18response(base):
     question8 = Column(String)
     question9 = Column(String)
     question10 = Column(String)
+
+class AutismGirlresponse(base):
+    __tablename__='autismgirlresponse'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    email=Column(String,unique=True)
+    question1 = Column(String)
+    question2 = Column(String)
+    question3 = Column(String)
+    question4 = Column(String)
+    question5 = Column(String)
+    question6 = Column(String)
+    question7 = Column(String)
+    question8 = Column(String)
+    question9 = Column(String)
+    question10 = Column(String)
+
+class Contact(base):
+    __tablename__='contactinfo'
+
+    id=Column(Integer,primary_key=True, autoincrement=True)
+    name=Column(String)
+    email= Column(String, unique=True)
+    message=Column(String)

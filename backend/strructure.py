@@ -102,7 +102,7 @@ class AutismAgeGirlsQuestions(InputAutismAgeGirlsQuestions):
         orm_mode:True
 
 class InputAutism1lessResponse(SQLModel):
-    person_id:int
+    email:str
     question1:str
     question2:str
     question3:str
@@ -120,7 +120,7 @@ class Autism1lessResponse(InputAutism1lessResponse):
         orm_mode:True
 
 class InputAutism1Response(SQLModel):
-    person_id:int
+    email:str
     question1:str
     question2:str
     question3:str
@@ -137,7 +137,7 @@ class Autism1Response(InputAutism1Response):
     class config:
         orm_mode:True
 class InputAutism2to10Response(SQLModel):
-    person_id:int
+    email:str
     question1:str
     question2:str
     question3:str
@@ -145,13 +145,16 @@ class InputAutism2to10Response(SQLModel):
     question5:str
     question6:str
     question7:str
+    question8:str
+    question9:str
+    question10:str
 
 class Autism2to10Response(InputAutism2to10Response):
     id:int
     class config:
         orm_mode:True
 class InputAutism10to17Response(SQLModel):
-    person_id:int
+    email:str
     question1:str
     question2:str
     question3:str
@@ -168,7 +171,7 @@ class Autism10to17Response(InputAutism10to17Response):
     class config:
         orm_mode:True
 class InputAutism18response(SQLModel):
-    person_id:int
+    email:str
     question1:str
     question2:str
     question3:str
@@ -182,5 +185,35 @@ class InputAutism18response(SQLModel):
 
 class Autism18response(InputAutism18response):
     id:int
+    class config:
+        orm_mode:True
+
+class InputAutismGirlresponse(SQLModel):
+
+    email:str
+    question1 :str
+    question2 :str
+    question3 :str
+    question4 :str
+    question5 :str
+    question6 :str
+    question7 :str
+    question8 :str
+    question9 :str
+    question10 :str
+
+class AutismGirlresponse(InputAutismGirlresponse):
+    id:int
+    class config:
+        orm_mode:True
+
+class InputContact(SQLModel):
+    name:str
+    email:str
+    message:str
+
+class Contact(InputContact):
+    id:int
+
     class config:
         orm_mode:True
