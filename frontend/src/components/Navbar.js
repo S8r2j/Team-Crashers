@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  let navigate = useNavigate();
   return (
     <>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,10 +37,10 @@ function Navbar() {
       
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
   <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-danger">Login</button>
+    <button type="button" class="btn btn-danger" onClick={()=>{navigate("/login")}}>Login</button>
     </div>
     <div class="btn-group me-2" role="group" aria-label="Second group">
-    <button type="button" class="btn btn-dark">Sign Up</button>
+    <button type="button" class="btn btn-dark" onClick={()=>{navigate("/signup")}}>Sign Up</button>
     </div>
     </div>
         
