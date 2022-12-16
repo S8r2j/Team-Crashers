@@ -6,7 +6,7 @@ const Contact = () => {
     const initialValues = {
         name: "",
         email: "",
-        password: ""
+        message: ""
 
     };
 
@@ -19,7 +19,7 @@ const Contact = () => {
             //// By disabling validation onChange and onBlur formik will validate on submit.
             onSubmit: async (values, action) => {
                 console.log(values);
-                await axios.post("http://127.0.0.1:8000/signup/", values)
+                await axios.post("http://127.0.0.1:8000/api/contact/", values)
                     .then(res => console.log('posting data', res)).catch(err => console.log(err))
                 action.resetForm();
             },
