@@ -40,15 +40,16 @@ class Donateamount(SQLModel):
     class config:
         orm_mode: True
 
-class Address(SQLModel):
+class InputAddress(SQLModel):
+    city: str
+    state: str
+    country: str
+    pin_code: int
+class Address(InputAddress):
     address_id:int
-    city:str
-    state:str
-    country:str
-    pin_code:int
 
     class config:
         orm_mode:True
 
-class Donation(InputDonateamount,Address,InputDonatePerson):
-    form:int | Optional
+class Donation(InputDonateamount,InputAddress,InputDonatePerson):
+    form:Optional[int]
