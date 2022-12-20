@@ -49,6 +49,10 @@ button:hover{
 .btn{
    margin: 10px;
 }
+.navbar{
+    background: #FF7D00;
+    box-shadow: 5px 10px 10px rgb(170, 141, 141);
+}
 .nav-item{
     padding: 0px 4px 0px 8px;
 }
@@ -74,4 +78,26 @@ button:hover{
 }
 .ques1{
     margin: 20px;
+}
+.sub4 img{
+    margin: 15px 5vw;
+    height: 60vh;
+    width: 90vw;
+}
+.sub4 img:hover{
+  transform: scale(1.1);
+}
+.list1>li{
+    color: black;
+    list-style: disc;
+   
+}
+.sub3{
+   margin: 10px;
+   padding: 10px;
+
+}
+.main5{
+    margin: 10px;
+   padding: 10px;
 }

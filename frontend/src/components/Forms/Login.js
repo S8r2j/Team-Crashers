@@ -1,9 +1,9 @@
 import React from "react";
 import { useFormik } from "formik";
-import { signUpSchema } from "../Validation/SignUpSchema";
 import axios from 'axios';
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+    let navigate = useNavigate();
     const initialValues = {
         email: "",
         password: ""
@@ -21,6 +21,7 @@ const Login = () => {
                 await axios.post("http://127.0.0.1:8000/validate/user/", values)
                     .then(res => console.log('posting data', res)).catch(err => console.log(err))
                 action.resetForm();
+                navigate("/profile");
             },
         });
 

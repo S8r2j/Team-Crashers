@@ -3,7 +3,9 @@ import { useFormik } from "formik";
 import { signUpSchema } from "../Validation/SignUpSchema";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const SignUp = () => {
+    let navigate = useNavigate();
     const initialValues = {
         name: "",
         email: "",
@@ -23,6 +25,7 @@ const SignUp = () => {
                 await axios.post("http://127.0.0.1:8000/signup/", values)
                     .then(res => console.log('posting data', res)).catch(err => console.log(err))
                 action.resetForm();
+                {navigate("/login")}
             },
         });
 
@@ -34,7 +37,7 @@ const SignUp = () => {
                 <h1 className="modal-title">Welcome!</h1>
                 <div className="form">
                 <form onSubmit={handleSubmit}>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label htmlFor="name" className="input-label">
                             Name
                         </label>
@@ -52,7 +55,7 @@ const SignUp = () => {
                             <p className="form-error">{errors.name}</p>
                         ) : null}
                     </div>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label htmlFor="email" className="input-label">
                             Email
                         </label>
@@ -70,7 +73,7 @@ const SignUp = () => {
                             <p className="form-error">{errors.email}</p>
                         ) : null}
                     </div>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label htmlFor="password" className="input-label">
                             Password
                         </label>
@@ -88,7 +91,7 @@ const SignUp = () => {
                             <p className="form-error">{errors.password}</p>
                         ) : null}
                     </div>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label htmlFor="confirm_password" className="input-label">
                             Confirm Password
                         </label>

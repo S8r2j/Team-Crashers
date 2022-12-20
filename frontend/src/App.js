@@ -9,7 +9,7 @@ import Donate from './components/Donate';
 import SignUp from './components/Forms/Signup';
 import Login from './components/Forms/Login';
 import Check_Autism from './components/Check_Autism';
-import News from './components/News';
+import Profile from './components/Profile';
 function App() {
 
   return (
@@ -19,7 +19,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/check" element={<Check_Autism />} />
-      <Route path='/news' element={<News/>}/>
+      <Route path='/profile' element={<Profile/>}/>
       <Route path="/contact" element={<Contact />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />

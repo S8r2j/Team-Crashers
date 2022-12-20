@@ -7,10 +7,10 @@ function Footer() {
 		<div class="inner-footer">
 
 			<div class="footer-items">
-				<h1>Computers & Codes</h1>
+			<img src="images/My project.png" width="100em" height="100em" className="d-inline-block align-baseline pt-2 " alt="logo" />
+				<h1>check autism</h1>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.
+				Autism spectrum disorder (ASD) is a developmental disability caused by differences in the brain. 
 				</p>
 			</div>
 
@@ -18,11 +18,11 @@ function Footer() {
 				<h2>Quick Links</h2>
 				<div class="border"></div>
 				<ul>
-					<a href=""><li>Home</li></a>
-					<a href=""><li>About Us</li></a>
-					<a href=""><li>Services</li></a>
-					<a href=""><li>Portfolio</li></a>
-					<a href=""><li>Contact Us</li></a>
+					<a href="/"><li>Home</li></a>
+					<a href="/"><li>About Us</li></a>
+					<a href="/"><li>Services</li></a>
+					<a href="/"><li>Portfolio</li></a>
+					<a href="/"><li>Contact Us</li></a>
 				</ul>
 			</div>
 
@@ -30,11 +30,11 @@ function Footer() {
 				<h2>Quick links</h2>
 				<div class="border"></div>
 				<ul>
-					<a href=""><li>History</li></a>
-					<a href=""><li>Donate</li></a>
-					<a href=""><li>Individual</li></a>
-					<a href=""><li>Privacy Policy</li></a>
-					<a href=""><li>Managements</li></a>
+					<a href="/"><li>History</li></a>
+					<a href="/"><li>Donate</li></a>
+					<a href="/"><li>Individual</li></a>
+					<a href="/"><li>Privacy Policy</li></a>
+					<a href="/"><li>Managements</li></a>
 				</ul>
 			</div>
 
@@ -42,9 +42,9 @@ function Footer() {
 				<h2>Contact Us</h2>
 				<div class="border"></div>
 				<ul>
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
+					<li><i class="fa fa-map-marker" aria-hidden="true"></i>Dharan - 1</li>
 					<li><i class="fa fa-phone" aria-hidden="true"></i>1234567890</li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i>support@computers&codes.com</li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i>checkautism@gmail.com</li>
 				</ul>
 				<div class="social-media">
 					<a href="/"><i class="fa fa-facebook" aria-hidden="true"><img src='images/logo/fblogo.png' alt='logo'/></i></a>
@@ -56,7 +56,7 @@ function Footer() {
 			
 		</div>
 		<div class="footer-bottom">
-			Copyright &copy; Computers & Codes 2019. All rights reserved.
+			Copyright &copy; check autism 2022. All rights reserved.
 		</div>
 	</div>
     </div>
